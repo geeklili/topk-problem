@@ -1,6 +1,6 @@
-def bubble_sort(li):
+def select_sort_max(li):
 	"""
-	冒泡排序
+	选择排序，选最大值
 	:param li:数组
 	"""
 	# 倒序遍历数组的index
@@ -16,7 +16,23 @@ def bubble_sort(li):
 		li[ind], li[max_index] = li[max_index], li[ind]
 
 
+def select_sort_min(li):
+	"""
+	选择排序，选最小值，插入到最前面
+	:param li: 数组
+	"""
+	for ind in range(len(li)):
+		min_index = ind
+		for i in range(ind, len(li)):
+			if li[i] < li[min_index]:
+				min_index = i
+		li[ind], li[min_index] = li[min_index], li[ind]
+
+
 if __name__ == '__main__':
 	li = [5, 2, 9, 10, 7, 3, 1]
-	bubble_sort(li)
+	# select_sort_max(li)
+	# print(li)
+
+	select_sort_min(li)
 	print(li)
